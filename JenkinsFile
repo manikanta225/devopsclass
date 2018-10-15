@@ -28,12 +28,12 @@ node {
       } else {
          bat(/"${mvnHome}\bin\mvn" sonar:sonar/)
       }
-   }
+   }https://github.com/manikanta225/devopsclass
    stage('Deploy') {
-       sh 'curl -u admin:redhat@123 -T target/**.war "http://13.232.223.116:8080/manager/text/deploy?path=/devops&update=true"'
+       sh 'curl -u admin:redhat@123 -T target/**.war "http://18.212.185.180:8080/manager/text/deploy?path=/devops&update=true"'
    }
    stage("Smoke Test"){
-       sh "curl --retry-delay 10 --retry 5 http://13.232.223.116:8080/devops"
+       sh "curl --retry-delay 10 --retry 5 http://18.212.185.180:8080/devops"
    } 
    stage('Artifacts') {
       if (isUnix()) {
