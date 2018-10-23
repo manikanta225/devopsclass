@@ -30,10 +30,10 @@ node {
       }
    }https://github.com/manikanta225/devopsclass
    stage('Deploy') {
-       sh 'curl -u admin:redhat@123 -T target/**.war "http://18.212.185.180:8080/manager/text/deploy?path=/devops&update=true"'
+       sh 'curl -u admin:redhat@123 -T target/**.war "http://18.233.224.62:8080/manager/text/deploy?path=/devops&update=true"'
    }
-   stage("Smoke Test"){
-       sh "curl --retry-delay 10 --retry 5 http://18.212.185.180:8080/devops"
+z   stage("Smoke Test"){18.233.224.62
+       sh "curl --retry-delay 10 --retry 5 http://18.233.224.62:8080/devops"
    } 
    stage('Artifacts') {
       if (isUnix()) {
